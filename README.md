@@ -15,11 +15,11 @@ opkg update && opkg install nano tcpdump igmpproxy ip-full iptables-mod-ipopt lu
 /etc/init.d/igmpproxy start  
 /etc/init.d/igmpproxy enable  
 
-- On converti votre FTI en hexa :
-echo -n 'fti/qpq8888' | xxd  -p # Bien sûr il faut remplacer qpq8888 par votre vrai FTI.
+- On converti votre FTI en hexa (fti/qpq8888 = valeur créée pour l'exemple des fichiers de configuration):
+echo -n 'fti/qpq8888' | xxd  -p 
 
 - On decompresse l'archive, et on édite le fichier /etc/config/network =>
-- Vous remplacer 6674692f71707138383838 par votre nouveau FTI, uniquement présent dans le fichier /etc/config/network (avec notepad on peut utiliser la commande remplacer, si vous voulez être sûr de ne pas faire d'erreur.
+- Vous remplacer 6674692f71707138383838 par votre vrai FTI, uniquement présent dans le fichier /etc/config/network (avec notepad on peut utiliser la commande remplacer, si vous voulez être sûr de ne pas faire d'erreur.
 
 Une fois votre fichier network enregistré, vous copiez tous les fichiers présents dans le repertoire précédemment décompressé dans votre routeur, ne pas ommetre de fichier !
 
