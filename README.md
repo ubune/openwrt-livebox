@@ -9,10 +9,10 @@ Avant de remplacer les fichiers de configuration de votre routeur par ceux-ci il
 
 - Installer les paquets nécéssaires : 
 opkg update && opkg install nano tcpdump igmpproxy ip-full iptables-mod-ipopt luci-ssl xxd
-- Ensuite on demarre luci et on active le lancement automatique d'igmpproxy :
-/etc/init.d/uhttpd start
-/etc/init.d/igmpproxy start
-/etc/init.d/igmpproxy enable
+- Ensuite on demarre luci et on active le lancement automatique d'igmpproxy :  
+/etc/init.d/uhttpd start  
+/etc/init.d/igmpproxy start  
+/etc/init.d/igmpproxy enable  
 - On converti votre FTI en hexa :
 echo -n 'fti/qpq8888' | xxd  -p # Bien sûr il faut remplacer qpq8888 par votre vrai FTI.
 
