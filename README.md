@@ -27,4 +27,5 @@ Une fois tout ceci fait, plus qu'à redemarrer le routeur, et brancher votre dé
 Et tout devrait fonctionner ;)
 
 
-# Vous pouvez retrouver mon tuto complet ici : https://lafibre.info/remplacer-livebox/remplacement-de-la-livebox-par-un-routeur-openwrt-18-dhcp-v4v6-tv
+# Vous pouvez retrouver mon tuto complet ici :
+https://lafibre.info/remplacer-livebox/remplacement-de-la-livebox-par-un-routeur-openwrt-18-dhcp-v4v6-tv
