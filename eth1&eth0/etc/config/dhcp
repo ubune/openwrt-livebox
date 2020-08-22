@@ -1,3 +1,4 @@
+
 config dnsmasq
 	option domainneeded '1'
 	option boguspriv '1'
@@ -43,3 +44,4 @@ config odhcpd 'odhcpd'
 	option leasefile '/tmp/hosts/odhcpd'
 	option leasetrigger '/usr/sbin/odhcpd-update'
 	option loglevel '4'
+

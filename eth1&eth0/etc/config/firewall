@@ -1,0 +1,137 @@
+
+config defaults
+	option syn_flood '1'
+	option input 'DROP'
+	option output 'DROP'
+	option forward 'DROP'
+
+config zone
+	option name 'lan'
+	option input 'ACCEPT'
+	option output 'ACCEPT'
+	option forward 'ACCEPT'
+	option network 'lan'
+
+config zone
+	option name 'wan'
+	option output 'ACCEPT'
+	option masq '1'
+	option input 'DROP'
+	option forward 'DROP'
+	option network 'wan'
+	option family 'ipv4'
+
+config zone
+    option name 'wan6'
+	option input 'DROP'
+	option forward 'DROP'
+	option network 'wan6'
+	option family 'ipv6'
+	option output 'ACCEPT'
+
+config zone
+	option name 'tv'
+	option output 'ACCEPT'
+	option network 'vlantv'
+	option input 'ACCEPT'
+	option forward 'ACCEPT'
+	option family 'ipv4'
+
+config zone
+	option name 'wanTV'
+	option output 'ACCEPT'
+	option masq '1'
+	option network 'tvorange'
+	option input 'DROP'
+	option forward 'DROP'
+	option family 'ipv4'	
+
+config forwarding
+	option dest 'wan'
+	option src 'tv'
+
+config forwarding
+	option dest 'wanTV'
+	option src 'tv'
+	
+config forwarding
+	option dest 'wan6'
+	option src 'lan'
+
+config forwarding
+	option dest 'wan'
+	option src 'lan'
+
+config include
+	option path '/etc/firewall.user'
+
+config rule
+	option name 'Allow-DHCP-Renew'
+	option src 'wan'
+	option proto 'udp'
+	option dest_port '68'
+	option target 'ACCEPT'
+	option family 'ipv4'
+	
+config rule
+	option target 'ACCEPT'
+	option name 'igmp'
+	option family 'ipv4'
+	option proto 'igmp'
+	option src 'wanTV'
+
+config rule
+	option target 'ACCEPT'
+	option name 'multicast'
+	option family 'ipv4'
+	option proto 'udp'
+	option src 'wanTV'
+	option dest 'tv'
+	option dest_ip '224.0.0.0/4'
+config rule
+	option name 'Allow-Ping'
+	option src 'wan'
+	option proto 'icmp'
+	option icmp_type 'echo-request'
+	option family 'ipv4'
+	option target 'ACCEPT'
+
+config rule
+	option name 'Allow-DHCPv6'
+	option proto 'udp'
+	option src_ip 'fc00::/6'
+	option dest_ip 'fc00::/6'
+	option dest_port '546'
+	option family 'ipv6'
+	option target 'ACCEPT'
+	option src 'wan6'
+
+config rule
+	option name 'Allow-MLD'
+	option proto 'icmp'
+	option src_ip 'fe80::/10'
+	option family 'ipv6'
+	option target 'ACCEPT'
+	option src 'wan6'
+
+config rule
+	option name 'Allow-ICMPv6-Input'
+	option proto 'icmp'
+	option limit '1000/sec'
+	option family 'ipv6'
+	option target 'ACCEPT'
+	option icmp_type 'echo-reply destination-unreachable echo-request router-advertisement router-solicitation time-exceeded'
+	option src 'wan6'
+
+config rule
+	option name 'Allow-ICMPv6-Forward'
+	option proto 'icmp'
+	option limit '1000/sec'
+	option family 'ipv6'
+	option target 'ACCEPT'
+	option src 'wan6'
+	option dest '*'
+	
+
+
+

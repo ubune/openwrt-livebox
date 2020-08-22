@@ -1,0 +1,14 @@
+config igmpproxy
+	option quickleave 1
+#	option verbose [0-3](none, minimal[default], more, maximum)
+
+config phyint
+    option network tvorange
+    option zone wanTV
+    option direction upstream
+    list altnet "0.0.0.0/0"
+
+config phyint lan
+    option network vlantv
+    option zone tv 
+    option direction downstream
