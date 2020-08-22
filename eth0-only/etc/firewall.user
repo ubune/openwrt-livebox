@@ -1,0 +1,17 @@
+# This file is interpreted as shell script.
+# Put your custom iptables rules here, they will
+# be executed with each firewall (re-)start.
+
+# Internal uci firewall chains are flushed and recreated on reload, so
+# put custom rules into the root chains e.g. INPUT or FORWARD or into the
+# special user chains, e.g. input_wan_rule or postrouting_lan_rule.
+
+iptables -t mangle -A POSTROUTING -j CLASSIFY --set-class 0000:0001 ## En gros tout le flux sortant passe dans la file 1 qui est en prio 0
+iptables -t mangle -A POSTROUTING -p icmp -j CLASSIFY --set-class 0000:0006 ##On passe le flux icmp dans la file 6 qui est en prio 6
+iptables -t mangle -A POSTROUTING -p igmp -j CLASSIFY --set-class 0000:0006 ## On passe le flux igmp (non tv) en prio 6
+
+#la même chose en ipv6 (avec cette fois le dhcpv6)
+ip6tables -t mangle -A POSTROUTING -j CLASSIFY --set-class 0000:0001
+ip6tables -t mangle -A POSTROUTING -p ipv6-icmp -j CLASSIFY --set-class 0000:0006
+ip6tables -t mangle -A POSTROUTING -p udp --dport 547 -j CLASSIFY --set-class 0000:0006
+ip6tables -t mangle -A POSTROUTING -p udp --dport 547 -j DSCP --set-dscp-class CS6
