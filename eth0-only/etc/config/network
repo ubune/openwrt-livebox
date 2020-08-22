@@ -1,0 +1,93 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config globals 'globals'
+
+config interface 'lan'
+	option ifname 'eth0.1'
+	option proto 'static'
+	option ipaddr '192.168.1.1'
+	option netmask '255.255.255.0'
+	option ip6assign '64'
+
+config device 'lan_dev'
+	option name 'eth0.1'
+	option macaddr 'fc:ec:da:7c:bf:01'
+
+config interface 'wan'
+	option ifname 'eth0.832'
+	option proto 'dhcp'
+	option broadcast '1'
+	option vendorid 'sagem'
+    option reqopts '1 15 28 51 58 59 90'
+	option sendopts '77:2b46535644534c5f6c697665626f782e496e7465726e65742e736f66746174686f6d652e4c697665626f7834 90:00000000000000000000001a0900000558010341010d6674692f71707138383838'
+
+config device 'wan_dev'
+	option name 'eth0.832'
+	option macaddr 'fc:ec:da:7c:b8:32'
+
+config interface 'wan6'
+	option ifname 'eth0.832'
+	option proto 'dhcpv6'
+	option reqprefix 'auto'
+	option reqaddress 'none'
+	option defaultreqopts '0'
+	option sendopts '11:00000000000000000000001a0900000558010341010d6674692f71707138383838 15:FSVDSL_livebox.Internet.softathome.livebox4 16:0000040e0005736167656d'
+	option reqopts '11 17 23 24'
+	option noclientfqdn '1'
+	option noacceptreconfig '1'
+
+config interface 'vlantv'
+	option proto 'static'
+	option ipaddr '192.168.19.254'
+	option netmask '255.255.255.0'
+	option ifname 'eth0.19'
+
+config device 'vlantv_dev'
+	option name 'eth0.19'
+	option macaddr 'fc:ec:da:7c:bf:19'
+
+config interface 'tvorange'
+	option ifname 'eth0.840'
+	option proto 'static'
+	option ipaddr '192.168.255.254'
+	option netmask '255.255.255.255'
+	option delegate '0'
+
+config device 'tvorange_dev'
+	option name 'eth0.840'
+	option macaddr 'fc:ec:da:7c:b8:40'
+
+config switch
+	option name 'switch0'
+	option reset '1'
+	option enable_vlan '1'
+
+config switch_vlan
+	option device 'switch0'
+	option vlan '1'
+	option vid '1'
+	option ports '1 2 4 6t'
+
+config switch_vlan
+	option device 'switch0'
+	option vlan '2'
+	option ports '0t 6t'
+	option vid '832'
+
+config switch_vlan
+	option device 'switch0'
+	option vlan '3'
+	option vid '19'
+	option ports '3 4t 6t'
+
+config switch_vlan
+	option device 'switch0'
+	option vlan '4'
+	option ports '0t 6t'
+	option vid '840'
+
