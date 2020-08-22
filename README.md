@@ -4,9 +4,9 @@
 #Vous pouvez retrouver le tuto ici : https://lafibre.info/remplacer-livebox/remplacement-de-la-livebox-par-un-routeur-openwrt-18-dhcp-v4v6-tv
 #Crée par ubune, le 20/02/19
 #Version eth0 + eth1, exemple pour la gamme Linksys WRT.
-# Version eth0 uniquement, exemple pour l'ubiquiti edge router X.
+#Version eth0 uniquement, exemple pour l'ubiquiti edge router X.
 
-Mise en service : 
+# Mise en service : 
 
 Avant de remplacer les fichiers de configuration de votre routeur par ceux-ci il faut :
 
