@@ -18,10 +18,10 @@ opkg update && opkg install nano tcpdump igmpproxy ip-full iptables-mod-ipopt lu
 - On converti votre FTI en hexa (fti/qpq8888 = valeur créée pour l'exemple des fichiers de configuration):  
 echo -n 'fti/qpq8888' | xxd  -p 
 
-- On decompresse l'archive, et on édite le fichier /etc/config/network =>
-- Vous remplacer 6674692f71707138383838 par votre vrai FTI, uniquement présent dans le fichier /etc/config/network (avec notepad on peut utiliser la commande remplacer, si vous voulez être sûr de ne pas faire d'erreur.
+- Récuperez les fichiers, et on édite /etc/config/network :  
+Vous remplacer 6674692f71707138383838 par votre vrai FTI
 
-Une fois votre fichier network enregistré, vous copiez tous les fichiers présents dans le repertoire précédemment décompressé dans votre routeur, ne pas ommetre de fichier !
+Une fois votre fichier network enregistré, vous copiez tous les fichiers dans votre routeur en respectant l'arborescence, n'oubliez aucun fichier !
 
 Si vous avez un décodeur TV5, il faut aussi gérer l'option 125 dans le fichier /etc/config/dhcp, il faut remplacer les XX par le n° de serie de votre livebox routeur converti en Hexa.
 
