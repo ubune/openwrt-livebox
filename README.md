@@ -7,7 +7,7 @@
 
 Avant de remplacer les fichiers de configuration de votre routeur par ceux-ci il faut :
 
-- Installer les paquets nécéssaires : 
+- Installer les paquets nécéssaires :  
 opkg update && opkg install nano tcpdump igmpproxy ip-full iptables-mod-ipopt luci-ssl xxd
 - Ensuite on demarre luci et on active le lancement automatique d'igmpproxy :  
 
