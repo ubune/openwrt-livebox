@@ -15,7 +15,7 @@ opkg update && opkg install nano tcpdump igmpproxy ip-full iptables-mod-ipopt lu
 /etc/init.d/igmpproxy start  
 /etc/init.d/igmpproxy enable  
 
-- On converti votre FTI en hexa (fti/qpq8888 = valeur créée pour l'exemple des fichiers de configuration):
+- On converti votre FTI en hexa (fti/qpq8888 = valeur créée pour l'exemple des fichiers de configuration):  
 echo -n 'fti/qpq8888' | xxd  -p 
 
 - On decompresse l'archive, et on édite le fichier /etc/config/network =>
