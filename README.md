@@ -31,3 +31,6 @@ Et tout devrait fonctionner ;)
 
 # Vous pouvez retrouver mon tuto complet ici :
 https://lafibre.info/remplacer-livebox/remplacement-de-la-livebox-par-un-routeur-openwrt-18-dhcp-v4v6-tv
+
+# If you like this depo, buy me a Coffee ! =)
+- [Paypal](https://paypal.me/pools/c/8wGwagGlFS) 
