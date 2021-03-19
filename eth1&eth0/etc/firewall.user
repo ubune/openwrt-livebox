@@ -9,7 +9,7 @@
 iptables -t mangle -A POSTROUTING -j CLASSIFY --set-class 0000:0001 ## En gros tout le flux sortant passe dans la file 1 qui est en prio 0
 iptables -t mangle -A POSTROUTING -p icmp -j CLASSIFY --set-class 0000:0006 ##On passe le flux icmp dans la file 6 qui est en prio 6
 iptables -t mangle -A POSTROUTING -p igmp -j CLASSIFY --set-class 0000:0006 ## On passe le flux igmp (non tv) en prio 6
-
+iptables -t mangle -A POSTROUTING -o eth1.832 -p udp --dport 67 -j CLASSIFY --set-class 0000:0006 ## On passe le flux dhcp dans la file 6 qui est en prio 6, necessaire pour le DHCP Renew
 #la même chose en ipv6 (avec cette fois le dhcpv6)
 ip6tables -t mangle -A POSTROUTING -j CLASSIFY --set-class 0000:0001
 ip6tables -t mangle -A POSTROUTING -p ipv6-icmp -j CLASSIFY --set-class 0000:0006
