@@ -57,5 +57,3 @@ config device
 	list egress_qos_mapping '1:0'
 	list egress_qos_mapping '0:6'
 
-config globals 'globals'
-	option packet_steering '1'
