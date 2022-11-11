@@ -1,4 +1,4 @@
-# FR - Replace Livebox with an openwrt router (ipv4,ipv6 & TV).
+# FR - Replace Livebox for an openwrt router (ipv4,ipv6 & TV).
 
 - Version 19.07 eth0 + eth1, exemple pour la gamme Linksys WRT.
 - Version 19.07 eth0 uniquement, exemple pour l'ubiquiti edge router X.
