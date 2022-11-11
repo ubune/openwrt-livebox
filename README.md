@@ -1,9 +1,18 @@
 # FR - Replace Livebox with an openwrt router (ipv4,ipv6 & TV).
 
-- Version eth0 + eth1, exemple pour la gamme Linksys WRT.
-- Version eth0 uniquement, exemple pour l'ubiquiti edge router X.
+- Version 19.07 eth0 + eth1, exemple pour la gamme Linksys WRT.
+- Version 19.07 eth0 uniquement, exemple pour l'ubiquiti edge router X.
+- Version 22.03, attention l'interface wan se nomme eth0 ici, sur certains routeurs elle se nomme "wan".
 
-# Mise en service : 
+# Mise en service (22.03 et supérieur, Internet uniquement) : 
+
+- Récupérez le /etc et collez le dans votre routeur (en remplacement).
+- Editez /etc/config/network :  
+- Remplacez "XAUTH" (2 occurences) par votre vrai FTI généré à l'aide du script de Kgersen ici : https://jsfiddle.net/kgersen/3mnsc6wy/
+
+Enjoy ;)
+
+# Mise en service (19.07 et inférieur) : 
 
 Avant de remplacer les fichiers de configuration de votre routeur par ceux-ci :
 
@@ -26,11 +35,9 @@ Une fois votre fichier network enregistré, copiez tous les fichiers dans votre 
 Si vous avez un décodeur TV5, il faut aussi gérer l'option 125 dans le fichier /etc/config/dhcp, il faut remplacer les XX par le n° de serie de votre livebox routeur converti en Hexa.
 
 Une fois tout ceci fait, plus qu'à redemarrer le routeur, et brancher votre décodeur TV sur le port 3 !
-Et tout devrait fonctionner ;)
+Enjoy ;)
 
 
 # Vous pouvez retrouver mon tuto complet ici :
 https://lafibre.info/remplacer-livebox/remplacement-de-la-livebox-par-un-routeur-openwrt-18-dhcp-v4v6-tv
 
-# If you like this depo, buy me a Coffee ! =)
-- [Paypal](https://paypal.me/pools/c/8wGwagGlFS) 

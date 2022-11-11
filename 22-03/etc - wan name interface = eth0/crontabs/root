@@ -1,0 +1,3 @@
+00 * * * * /etc/checkinternet.sh
+*/5 * * * * /etc/checknftrules.sh
+*/5 * * * * /etc/checkroutev6.sh
