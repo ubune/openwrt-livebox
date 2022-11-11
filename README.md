@@ -4,7 +4,7 @@
 - Version 19.07 eth0 uniquement, exemple pour l'ubiquiti edge router X.
 - Version 22.03, attention l'interface wan se nomme eth0 ici, sur certains routeurs elle se nomme "wan".
 
-# Mise en service (22.03 et supérieur, Internet uniquement) : 
+# Mise en service (22.03 et supérieur, Internet uniquement): 
 
 - Récupérez le /etc et collez le dans votre routeur (en remplacement).
 - Editez /etc/config/network :  
