@@ -6,15 +6,15 @@
 
 # Mise en service (22.03 et supérieur, Internet uniquement): 
 
-- Récupérez le /etc et collez le dans votre routeur (en remplacement).
-- Editez /etc/config/network :  
-- Remplacez "XAUTH" (2 occurences) par votre vrai FTI généré à l'aide du script de Kgersen ici : https://jsfiddle.net/kgersen/3mnsc6wy/
-
+- Vérifiez le nommage de votre interface "wan", si ce n'est pas "eth0" mais eth1 par ex, il faudra remplacer eth0 par eth1 dans tous les fichiers de configurations.
+- Récupérez le /etc 22.03 et collez le dans votre routeur (en remplacement).
+- Remplacez "XAUTH" dans /etc/config/network (2 occurences) par votre vrai FTI généré à l'aide du script de Kgersen ici : https://jsfiddle.net/kgersen/3mnsc6wy/
 Enjoy ;)
 
 # Mise en service (22.03 et supérieur, Internet +TV): 
 
-- Récupérez le /etc (avec tv) et collez le dans votre routeur (en remplacement).
+- Vérifiez le nommage de votre interface "wan", si ce n'est pas "eth0" mais eth1 par ex, il faudra remplacer eth0 par eth1 dans tous les fichiers de configurations.
+- Récupérez le /etc (22.03 avec tv) et collez le dans votre routeur (en remplacement).
 - Remplacez "XAUTH" dans /etc/config/network (2 occurences) par votre vrai FTI généré à l'aide du script de Kgersen ici : https://jsfiddle.net/kgersen/3mnsc6wy/
 - Installez igmpproxy : opkg update && opkg install igmpproxy
 - Remplacer les X et Y de l'option 125 dans /etc/config/dhcp
