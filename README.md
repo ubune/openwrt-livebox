@@ -12,6 +12,24 @@
 
 Enjoy ;)
 
+# Mise en service (22.03 et supérieur, Internet +TV): 
+
+- Récupérez le /etc (avec tv) et collez le dans votre routeur (en remplacement).
+- Editez /etc/config/network :  
+- Remplacez "XAUTH" (2 occurences) par votre vrai FTI généré à l'aide du script de Kgersen ici : https://jsfiddle.net/kgersen/3mnsc6wy/
+- Installez les paquets nécéssaires :  
+opkg update && opkg install igmpproxy
+/etc/init.d/igmpproxy enable
+- Remplacer les X et Y de l'option 125 dans /etc/config/dhcp
+
+Pour les "XX", convertissez votre numéro de serie de la livebox tv (ascii vers hex)
+Exemple : IA2022323438110 devient 494132303232333233343338313130
+
+Pour les "YY", on prend les 3 premiers octects de la mac, à convertir en Hex également.
+Exemple : 08:87:C6:B2:D1:90 soit 0887C6 devient 303838374336
+
+Enjoy ;)
+
 # Mise en service (19.07 et inférieur) : 
 
 Avant de remplacer les fichiers de configuration de votre routeur par ceux-ci :
