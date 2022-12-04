@@ -36,7 +36,7 @@ config dhcp 'lan'
 	list ra_flags 'none'
         list dhcp_option '6,81.253.149.10,80.10.246.3'
         list dhcp_option '15,orange.fr'
-        list dhcp_option '125,00:00:0d:e9:24:04:06:30:38:38:37:43:36:05:0f:49:41:32:30:32:32:33:32:33:34:33:38:31:31:30:06:09:4c:69:76:65:62:6f:78:20:34'
+        list dhcp_option '125,00:00:0d:e9:24:04:06:YY:YY:YY:YY:YY:YY:05:0f:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:06:09:4c:69:76:65:62:6f:78:20:34'
 
 config dhcp 'wan'
 	option interface 'wan'
