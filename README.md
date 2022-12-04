@@ -2,7 +2,7 @@
 
 - Version 19.07 eth0 + eth1, exemple pour la gamme Linksys WRT.
 - Version 19.07 eth0 uniquement, exemple pour l'ubiquiti edge router X.
-- Version 22.03, attention l'interface wan se nomme eth0 ici, sur certains routeurs elle se nomme "wan".
+- Version 22.03, attention l'interface wan est eth0 ici, sur certains routeurs c'est plutôt "wan" ou "eth1".
 
 # Mise en service (22.03 et supérieur, Internet uniquement): 
 
