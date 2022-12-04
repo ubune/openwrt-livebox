@@ -1,0 +1,6 @@
+oifname "eth0.832" counter meta priority set 0:1
+oifname "eth0.832" ip protocol icmp counter meta priority set 0:6
+oifname "eth0.832" ip protocol igmp counter meta priority set 0:6
+oifname "eth0.832" udp dport 67 counter meta priority set 0:6
+oifname "eth0.832" udp dport 547 counter meta priority set 0:6
+oifname "eth0.832" ip protocol icmpv6 counter meta priority set 0:6

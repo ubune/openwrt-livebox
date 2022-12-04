@@ -1,0 +1,160 @@
+
+config defaults
+	option output 'ACCEPT'
+	option synflood_protect '1'
+	option input 'DROP'
+	option forward 'DROP'
+
+config zone
+	option name 'lan'
+	list network 'lan'
+	option input 'ACCEPT'
+	option output 'ACCEPT'
+	option forward 'ACCEPT'
+
+config zone
+	option name 'wan'
+	option output 'ACCEPT'
+	option family 'ipv4'
+	list network 'wan4'
+	option forward 'DROP'
+	option masq '1'
+	option input 'DROP'
+
+config zone
+	option name 'wan6'
+	option input 'DROP'
+	option output 'ACCEPT'
+	option forward 'DROP'
+	option family 'ipv6'
+	list network 'wan6'
+	list device 'eth0.832'
+
+config zone
+	option name 'wanTV'
+	option output 'ACCEPT'
+	option masq '1'
+	option network 'tvorange'
+	option input 'DROP'
+	option forward 'DROP'
+	option family 'ipv4'
+	list device 'eth0.840'
+
+config forwarding
+	option src 'lan'
+	option dest 'wanTV'
+
+config forwarding
+	option src 'lan'
+	option dest 'wan'
+
+config forwarding
+	option src 'lan'
+	option dest 'wan6'
+
+config forwarding
+	option src 'wan6'
+	option dest 'lan'
+
+config rule
+	option target 'ACCEPT'
+	option name 'igmp'
+	option family 'ipv4'
+	option proto 'igmp'
+	option src 'wanTV'
+
+config rule
+	option target 'ACCEPT'
+	option name 'multicast'
+	option family 'ipv4'
+	option proto 'udp'
+	option src 'wanTV'
+	option dest 'lan'
+	option dest_ip '224.0.0.0/4'
+
+config rule
+	option name 'Allow-DHCP-Renew'
+	option src 'wan'
+	option proto 'udp'
+	option dest_port '68'
+	option target 'ACCEPT'
+	option family 'ipv4'
+
+config rule
+	option name 'Allow-Ping'
+	option src 'wan'
+	option proto 'icmp'
+	option icmp_type 'echo-request'
+	option family 'ipv4'
+	option target 'ACCEPT'
+
+config rule
+	option name 'Allow-IGMP'
+	option src 'wan'
+	option proto 'igmp'
+	option family 'ipv4'
+	option target 'ACCEPT'
+
+config rule
+	option name 'Allow-DHCPv6'
+	option proto 'udp'
+	option dest_port '546'
+	option family 'ipv6'
+	option target 'ACCEPT'
+	option src 'wan6'
+	list src_ip 'fc00::/6'
+	list dest_ip 'fc00::/6'
+
+config rule
+	option name 'Allow-MLD'
+	option proto 'icmp'
+	option family 'ipv6'
+	option target 'ACCEPT'
+	option src 'wan6'
+	list src_ip 'fe80::/10'
+
+config rule
+	option name 'Allow-ICMPv6-Input'
+	option proto 'icmp'
+	option limit '1000/sec'
+	option family 'ipv6'
+	option target 'ACCEPT'
+	list icmp_type 'bad-header'
+	list icmp_type 'destination-unreachable'
+	list icmp_type 'echo-reply'
+	list icmp_type 'echo-request'
+	list icmp_type 'neighbour-advertisement'
+	list icmp_type 'neighbour-solicitation'
+	list icmp_type 'packet-too-big'
+	list icmp_type 'router-advertisement'
+	list icmp_type 'router-solicitation'
+	list icmp_type 'time-exceeded'
+	list icmp_type 'unknown-header-type'
+	option src 'wan6'
+
+config rule
+	option name 'Allow-ICMPv6-Forward'
+	option dest '*'
+	option proto 'icmp'
+	option limit '1000/sec'
+	option family 'ipv6'
+	option target 'ACCEPT'
+	list icmp_type 'bad-header'
+	list icmp_type 'destination-unreachable'
+	list icmp_type 'echo-reply'
+	list icmp_type 'echo-request'
+	list icmp_type 'packet-too-big'
+	list icmp_type 'time-exceeded'
+	list icmp_type 'parameter-problem'
+	list icmp_type 'unknown-header-type'
+	option src 'wan6'
+
+config include 'orange_rules'
+	option enabled '1'
+	option type 'nftables'
+	option path '/etc/nftables.d/nft-prio6-rules.include'
+	option position 'chain-append'
+	option chain 'mangle_postrouting'
+
+
+
