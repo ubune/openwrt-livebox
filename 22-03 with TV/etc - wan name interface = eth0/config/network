@@ -62,7 +62,7 @@ config interface 'wan6'
 	option reqopts '11 17 23 24'
 	option noclientfqdn '1'
 	option noacceptreconfig '1'
-        # option clientid 'XXX' MAJ 11/12/22, bientot necessaire, correspond au DUID envoyé par la box, récupérable avec un dump ou liveboxinfo
+        option clientid '00030001XXXXXXXXXX' # X correspond à la MAC de votre box après le prefixe 00030001, ça sera également votre DUID.
 
 
 config interface 'wan4'
@@ -74,7 +74,7 @@ config interface 'wan4'
 	option reqopts '1 3 6 15 28 51 58 59 90 119 125'
 	option sendopts '77:2b46535644534c5f6c697665626f782e496e7465726e65742e736f66746174686f6d652e4c697665626f7834 90:XAUTH'
 	option norelease '1'
-        # option clientid 'XXX' MAJ 11/12/22, bientot necessaire, correspond à la mac en hexa (voir post levieux).
+        option clientid '01XXXXXXXXXX' # MAJ 11/12/22, bientot necessaire, correspond à la mac de la box SANS les ":" après 01
 
 
 config interface 'tvorange'
