@@ -36,14 +36,14 @@ Avant de remplacer les fichiers de configuration du routeur par ceux-ci :
 opkg update && opkg install nano tcpdump igmpproxy ip-full iptables-mod-ipopt luci-ssl xxd
 ```
 - Démarrer `luci` et activer le lancement automatique d'`igmpproxy` :  
-```
+```bash
 /etc/init.d/uhttpd start
 /etc/init.d/igmpproxy start
 /etc/init.d/igmpproxy enable
 ```
 
 - Convertir le FTI en hexa (fti/qpq8888 = valeur créée pour l'exemple des fichiers de configuration):  
-```
+```bash
 echo -n 'fti/qpq8888' | xxd  -p
 ```
 
