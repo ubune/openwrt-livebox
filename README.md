@@ -4,14 +4,14 @@
 - Version 19.07 eth0 uniquement, exemple pour l'ubiquiti edge router X.
 - Version 22.03, attention l'interface wan est eth0 ici, sur certains routeurs c'est plutôt "wan" ou "eth1".
 
-# Mise en service (22.03 et supérieur, Internet uniquement): 
+## Mise en service (22.03 et supérieur, Internet uniquement): 
 
 - Vérifier le nommage de l'interface "wan", si ce n'est pas "eth0" mais eth1 par ex, il faudra remplacer eth0 par eth1 dans tous les fichiers de configurations.
 - Récupérer le /etc 22.03 et le coller dans le routeur (en remplacement).
 - Remplacer "XAUTH" dans /etc/config/network (2 occurences) par le vrai FTI généré à l'aide du script de Kgersen ici : https://jsfiddle.net/kgersen/3mnsc6wy/
 Enjoy ;)
 
-# Mise en service (22.03 et supérieur, Internet +TV): 
+## Mise en service (22.03 et supérieur, Internet +TV): 
 
 - Vérifier le nommage de l'interface "wan", si ce n'est pas "eth0" mais eth1 par ex, il faudra remplacer eth0 par eth1 dans tous les fichiers de configurations.
 - Récupérer le /etc (22.03 avec tv) et le coller dans le routeur (en remplacement).
@@ -27,7 +27,7 @@ Exemple : `08:87:C6:B2:D1:90` soit `0887C6` devient `303838374336`
 
 Enjoy ;)
 
-# Mise en service (19.07 et inférieur) : 
+## Mise en service (19.07 et inférieur) : 
 
 Avant de remplacer les fichiers de configuration du routeur par ceux-ci :
 
@@ -57,5 +57,6 @@ Si décodeur TV5, il faut aussi gérer l'option 125 dans le fichier `/etc/config
 Une fois tout ceci fait, plus qu'à redemarrer le routeur, et brancher le décodeur TV sur le port 3 !
 Enjoy ;)
 
-# Tuto complet ici :
+---
+## Tuto complet ici :
 https://lafibre.info/remplacer-livebox/remplacement-de-la-livebox-par-un-routeur-openwrt-18-dhcp-v4v6-tv
