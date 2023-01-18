@@ -51,13 +51,7 @@ config device
 	option type '8021q'
 	option ifname 'eth0'
 	option vid '832'
-	list egress_qos_mapping '0:0'
-	list egress_qos_mapping '2:2'
-	list egress_qos_mapping '3:3'
-	list egress_qos_mapping '4:4'
-	list egress_qos_mapping '5:5'
-	list egress_qos_mapping '6:6'
-	list egress_qos_mapping '7:7'
-	list egress_qos_mapping '1:0'
-	list egress_qos_mapping '0:6'
-
+    list egress_qos_mapping '1:0'
+    list egress_qos_mapping '0:6'
+    list egress_qos_mapping '6:6'
+   #option macaddr 'XX:XX:XX:XX:XX:XX' # optionel mais conseillé, remplacez "XX:XX:XX:XX:XX:XX" par l'adresse mac de votre livebox.
