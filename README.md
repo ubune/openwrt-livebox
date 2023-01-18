@@ -9,8 +9,8 @@
 - Vérifier le nommage de l'interface "wan", si ce n'est pas "eth0" mais eth1 par ex, il faudra remplacer eth0 par eth1 dans tous les fichiers de configurations.
 - Récupérer le /etc 22.03 et le coller dans le routeur (en remplacement).
 - Remplacer "XAUTH" dans /etc/config/network (2 occurences) par le vrai FTI généré à l'aide du script de Kgersen ici : https://jsfiddle.net/kgersen/3mnsc6wy/
-- Récupérer l'adresse mac de votre livebox, remplacer XXXXXXXXXX par cette adresse mac (sans les :) dans /etc/network (2 occurences).
-- Optionel mais conseillé, décommentez #option macaddr dans /etc/network et remplacez XX:XX:XX:XX:XX:XX par l'adresse mac de votre livebox (avec les ":").
+- Récupérer l'adresse mac de votre livebox, remplacer `XXXXXXXXXX` par cette adresse mac (sans les ":") dans /etc/network (2 occurences).
+- Optionel mais conseillé, décommentez #option macaddr dans /etc/network et remplacez `XX:XX:XX:XX:XX:XX` par l'adresse mac de votre livebox (avec les ":").
 - Enjoy ;)
 
 ## Mise en service (22.03 et supérieur, Internet +TV): 
