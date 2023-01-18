@@ -1,14 +1,14 @@
 # FR - Remplacer une Livebox par un routeur OpenWrt (ipv4,ipv6 & TV).
 
-- Version 19.07 eth0 + eth1, exemple pour la gamme Linksys WRT.
-- Version 19.07 eth0 uniquement, exemple pour l'ubiquiti edge router X.
-- Version 22.03, attention l'interface wan est eth0 ici, sur certains routeurs c'est plutôt "wan" ou "eth1".
+- Version `19.07` eth0 + eth1, exemple pour la gamme Linksys WRT.
+- Version `19.07` eth0 uniquement, exemple pour l'ubiquiti edge router X.
+- Version `22.03`, attention l'interface wan est eth0 ici, sur certains routeurs c'est plutôt "wan" ou "eth1".
 
 ## Mise en service (22.03 et supérieur, Internet uniquement): 
 
 - Vérifier le nommage de l'interface "wan", si ce n'est pas "eth0" mais eth1 par ex, il faudra remplacer eth0 par eth1 dans tous les fichiers de configurations.
-- Récupérer le /etc 22.03 et le coller dans le routeur (en remplacement).
-- Remplacer "XAUTH" dans /etc/config/network (2 occurences) par le vrai FTI généré à l'aide du script de Kgersen ici : https://jsfiddle.net/kgersen/3mnsc6wy/
+- Récupérer le `/etc` 22.03 et le coller dans le routeur (en remplacement).
+- Remplacer `XAUTH` dans `/etc/config/network` (2 occurences) par le vrai FTI généré à l'aide du script de Kgersen ici : https://jsfiddle.net/kgersen/3mnsc6wy/
 - Récupérer l'adresse mac de votre livebox, remplacer `XXXXXXXXXX` par cette adresse mac (sans les ":") dans /etc/network (2 occurences).
 - Optionel mais conseillé, décommentez #option macaddr dans `/etc/network` et remplacez `XX:XX:XX:XX:XX:XX` par l'adresse mac de votre livebox (avec les ":").
 - Enjoy ;)
@@ -16,8 +16,8 @@
 ## Mise en service (22.03 et supérieur, Internet +TV): 
 
 - Vérifier le nommage de l'interface "wan", si ce n'est pas "eth0" mais eth1 par ex, il faudra remplacer eth0 par eth1 dans tous les fichiers de configurations.
-- Récupérer le /etc (22.03 avec tv) et le coller dans le routeur (en remplacement).
-- Remplacer "XAUTH" dans /etc/config/network (2 occurences) par le vrai FTI généré à l'aide du script de Kgersen ici : https://jsfiddle.net/kgersen/3mnsc6wy/
+- Récupérer le `/etc` (22.03 avec tv) et le coller dans le routeur (en remplacement).
+- Remplacer `XAUTH` dans `/etc/config/network` (2 occurences) par le vrai FTI généré à l'aide du script de Kgersen ici : https://jsfiddle.net/kgersen/3mnsc6wy/
 - Récupérer l'adresse mac de votre livebox, remplacer `XXXXXXXXXX` par cette adresse mac (sans les ":") dans /etc/network (2 occurences).
 - Optionel mais conseillé, décommentez #option macaddr dans `/etc/network` et remplacez `XX:XX:XX:XX:XX:XX` par l'adresse mac de votre livebox (avec les ":").
 - Installer igmpproxy : `opkg update && opkg install igmpproxy`
