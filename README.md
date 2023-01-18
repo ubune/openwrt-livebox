@@ -10,8 +10,8 @@
 - Récupérer le /etc 22.03 et le coller dans le routeur (en remplacement).
 - Remplacer "XAUTH" dans /etc/config/network (2 occurences) par le vrai FTI généré à l'aide du script de Kgersen ici : https://jsfiddle.net/kgersen/3mnsc6wy/
 - Récupérer l'adresse mac de votre livebox, remplacer XXXXXXXXXX par cette adresse mac (sans les :) dans /etc/network (2 occurences).
-- Optionel mais conseillé, décommentez #option macaddr dans /etc/network et remplacez XX:XX:XX:XX:XX:XX par l'adresse mac de vore livebox (avec les :).
-Enjoy ;)
+- Optionel mais conseillé, décommentez #option macaddr dans /etc/network et remplacez XX:XX:XX:XX:XX:XX par l'adresse mac de votre livebox (avec les ":").
+- Enjoy ;)
 
 ## Mise en service (22.03 et supérieur, Internet +TV): 
 
@@ -19,7 +19,7 @@ Enjoy ;)
 - Récupérer le /etc (22.03 avec tv) et le coller dans le routeur (en remplacement).
 - Remplacer "XAUTH" dans /etc/config/network (2 occurences) par le vrai FTI généré à l'aide du script de Kgersen ici : https://jsfiddle.net/kgersen/3mnsc6wy/
 - Récupérer l'adresse mac de votre livebox, remplacer XXXXXXXXXX par cette adresse mac (sans les :) dans /etc/network (2 occurences).
-- Optionel mais conseillé, décommentez #option macaddr dans /etc/network et remplacez XX:XX:XX:XX:XX:XX par l'adresse mac de vore livebox (avec les :).
+- Optionel mais conseillé, décommentez #option macaddr dans /etc/network et remplacez XX:XX:XX:XX:XX:XX par l'adresse mac de votre livebox (avec les ":").
 - Installer igmpproxy : `opkg update && opkg install igmpproxy`
 - Remplacer les X et Y de l'option 125 dans `/etc/config/dhcp`
 
