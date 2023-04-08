@@ -4,7 +4,7 @@
 - Version `19.07` eth0 uniquement, exemple pour l'ubiquiti edge router X.
 - Version `22.03`, attention l'interface wan est eth0 ici, sur certains routeurs c'est plutôt "wan" ou "eth1".
 
-## Mise en service (22.03 et supérieur, Internet uniquement): 
+## Mise en service (22.03 et supérieur, Internet uniquement) : 
 
 - Vérifier le nommage de l'interface "wan", si ce n'est pas "eth0" mais eth1 par ex, il faudra remplacer eth0 par eth1 dans tous les fichiers de configurations.
 - Récupérer le `/etc` 22.03 et le coller dans le routeur (en remplacement).
@@ -15,7 +15,7 @@
            - dans wan6 `option clientid '00030001A23456781926'` par `'00030001 + l'adresse mac de votre livebox'`
 - Enjoy ;)
 
-## Mise en service (22.03 et supérieur, Internet +TV): 
+## Mise en service (22.03 et supérieur, Internet +TV) : 
 
 - Vérifier le nommage de l'interface "wan", si ce n'est pas "eth0" mais eth1 par ex, il faudra remplacer eth0 par eth1 dans tous les fichiers de configurations.
 - Récupérer le `/etc` (22.03 avec tv) et le coller dans le routeur (en remplacement).
