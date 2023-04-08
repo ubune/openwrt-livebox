@@ -11,8 +11,8 @@
 - Remplacer `XAUTH` dans `/etc/config/network` (2 occurences) par le vrai FTI généré à l'aide du script de Kgersen ici : https://jsfiddle.net/kgersen/3mnsc6wy/
 - Si vous voulez récupérer le même préfixe ipv6, adresse ip publique ipv4, dans `/etc/network` remplacez `option macaddr 'A2:34:56:78:19:26'` par l'adresse mac de votre livebox.
 - Le client id doit contenir l'adresse mac de l'interface vlan 832, donc remplacez :  
-           - dans wan4 `option clientid '01A23456781926'` par 01 + l'adresse mac de votre livebox (sans les :)  
-           - dans wan6 `option clientid '00030001A23456781926'` par 00030001 + l'adresse mac de votre livebox (sans les :)
+           - dans wan4 `option clientid '01A23456781926'` par `'01 + l'adresse mac de votre livebox`'  
+           - dans wan6 `option clientid '00030001A23456781926'` par `'00030001 + l'adresse mac de votre livebox'`
 - Enjoy ;)
 
 ## Mise en service (22.03 et supérieur, Internet +TV): 
@@ -22,8 +22,8 @@
 - Remplacer `XAUTH` dans `/etc/config/network` (2 occurences) par le vrai FTI généré à l'aide du script de Kgersen ici : https://jsfiddle.net/kgersen/3mnsc6wy/
 - Si vous voulez récupérer le même préfixe ipv6, adresse ip publique ipv4, dans `/etc/network` remplacez `option macaddr 'A2:34:56:78:19:26'` par l'adresse mac de votre livebox.
 - Le client id doit contenir l'adresse mac de l'interface vlan 832, donc remplacez :  
-           - dans wan4 `option clientid '01A23456781926'` par 01 + l'adresse mac de votre livebox (sans les :)  
-           - dans wan6 `option clientid '00030001A23456781926'` par 00030001 + l'adresse mac de votre livebox (sans les :)
+           - dans wan4 `option clientid '01A23456781926'` par `'01 + l'adresse mac de votre livebox`'  
+           - dans wan6 `option clientid '00030001A23456781926'` par `'00030001 + l'adresse mac de votre livebox'`
 - Installer igmpproxy : `opkg update && opkg install igmpproxy`
 - Remplacer les X et Y de l'option 125 dans `/etc/config/dhcp`
 
