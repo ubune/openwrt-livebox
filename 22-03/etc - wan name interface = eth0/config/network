@@ -31,7 +31,7 @@ config interface 'wan6'
 	option reqopts '11 17 23 24'
 	option noclientfqdn '1'
 	option noacceptreconfig '1'
-    option clientid '00030001A23456781926' # Remplacez 00030001A23456781926 par 00030001 suivi de l'adresse mac sans les : de votre interface vlan 832. 
+	option clientid '00030001A23456781926' # Remplacez 00030001A23456781926 par 00030001 suivi de l'adresse mac sans les : de votre interface vlan 832. 
 
 
 config interface 'wan4'
@@ -43,7 +43,7 @@ config interface 'wan4'
 	option reqopts '1 3 6 15 28 51 58 59 90 119 125'
 	option sendopts '77:2b46535644534c5f6c697665626f782e496e7465726e65742e736f66746174686f6d652e4c697665626f7836 90:XAUTH'
 	option norelease '1'
-    option clientid '01A23456781926' # Remplacez 01A23456781926 par 01 suivi de l'adresse mac sans les : de votre interface vlan 832. 
+	option clientid '01A23456781926' # Remplacez 01A23456781926 par 01 suivi de l'adresse mac sans les : de votre interface vlan 832. 
 
 
 config device
