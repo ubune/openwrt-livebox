@@ -54,4 +54,4 @@ config device
     list egress_qos_mapping '1:0'
     list egress_qos_mapping '0:6'
     list egress_qos_mapping '6:6'
-    option macaddr 'A2:34:56:78:19:26' remplacez "A2:34:56:78:19:26" par l'adresse mac de votre livebox.
+    option macaddr 'A2:34:56:78:19:26' # Remplacez "A2:34:56:78:19:26" par l'adresse mac de votre livebox.
