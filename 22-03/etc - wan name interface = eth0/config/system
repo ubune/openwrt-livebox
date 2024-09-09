@@ -7,8 +7,7 @@ config system
 	option zonename 'Europe/Monaco'
 	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
 	option log_proto 'udp'
-	option hostname 'openwrt-coco'
-	option log_ip 'vrli.ubune.fr'
+	option hostname 'openwrt-github'
 	option conloglevel '7'
 	option cronloglevel '8'
 
